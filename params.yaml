@@ -2,7 +2,7 @@ AUGMENTATION: True
 IMAGE_SIZE: [224, 224, 3] #As per VGG 16 Model
 BATCH_SIZE: 16
 INCLUDE_TOP: False
-EPOCHS: 200 # I will do it 100 or 200
+EPOCHS: 5 # I will do it 100 or 200
 CLASSES: 4 # I will do it 4
 WEIGHTS: 'imagenet' # PRetranined on image net
 LEARNING_RATE: 0.01
