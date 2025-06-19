@@ -25,8 +25,14 @@ def main():
     try:
         logger.info(f">>>>>>>>>> stage {STAGE_NAME} started <<<<<<<<")
         evaluation_pipeline = EvaluationPipeline()
-        evaluation_pipeline.main()
+        evaluation_pipeline.run()
         logger.info(f">>>>>>>>>> stage {STAGE_NAME} completed <<<<<<<<")
     except Exception as e:
         logger.exception(e)
         raise e
+    
+
+
+
+if __name__ == "__main__":
+    main()

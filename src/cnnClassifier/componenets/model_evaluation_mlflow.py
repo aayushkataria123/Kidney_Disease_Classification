@@ -44,13 +44,20 @@ class Evaluation:
 
 
     def evaluation(self):
-        self.model=self.load_model(self.config.path_of_mdel)
+        self.model = self.load_model(self.config.path_of_model)
         self._valid_generator()
+        print("Running model evaluation...")
         self.score = self.model.evaluate(self._valid_generator)
+        print(f"Score: {self.score}")
+        self.save_score()
+
 
     def save_score(self):
-        score = {'loss':self.score[0], 'accuracy':self.score[1]}
-        save_json(Path('artifacts/evaluation/score.json'),data=score)
+        path = Path("scores.json").resolve()
+        print(f"Saving scores to: {path}")
+        scores = {'loss': self.score[0], 'accuracy': self.score[1]}
+        save_json(path, data=scores)
+
         
         
     def log_into_mlflow(self):
