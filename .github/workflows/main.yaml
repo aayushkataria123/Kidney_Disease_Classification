@@ -68,8 +68,8 @@ jobs:
     needs: build-and-push-ecr-image
     runs-on:
       - self-hosted
-      - linux
-      - docker
+      - Linux
+      - X64
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
